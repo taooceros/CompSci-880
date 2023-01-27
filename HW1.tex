@@ -42,9 +42,64 @@
 Homework NUM: 1} \\
 \end{center}
 
+\section*{Exercise 1}
+Consider a system with $m=1$. Determine the output distributions of each of the following processes:
+\begin{enumerate}
+    \item Start in state $|0\rangle$ and apply \textit{H}, apply again, and measure.
+    \item Start in state $|0\rangle$ and apply \textit{H}, measure, apply \textit{H}, and measure.
+\end{enumerate}
 
 
+\section*{Solution}
 
+\begin{equation}
+    H = \frac{1}{\sqrt{2}}\begin{pmatrix}
+        1 & 1 \\
+        1 & -1
+    \end{pmatrix}
+\end{equation}
+
+\begin{enumerate}
+    \item \begin{align}
+        S_0 &= H H |0\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix}
+                1 & 1 \\
+                1 & -1
+            \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix}
+                1 & 1 \\
+                1 & -1
+            \end{pmatrix} \begin{pmatrix}
+                1 \\
+                0 \\
+            \end{pmatrix} \\
+                &=\begin{pmatrix}
+                    1 \\
+                    0 \\
+                \end{pmatrix} \\
+    \end{align}
+
+    \item \begin{align}
+        S_0 &= H|0\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix}
+            1 & 1 \\
+            1 & -1
+        \end{pmatrix} \begin{pmatrix}
+            1 \\
+            0 \\
+        \end{pmatrix} \\
+            &=\frac{1}{\sqrt[]{2}}\begin{pmatrix}
+                1 \\
+                1 \\
+            \end{pmatrix} \\
+    \end{align}
+
+    If the state collapse, it will be a probability distributions of $|0\rangle$ and $|1\rangle$.
+
+    \begin{align}
+        P(|0\rangle) &= \frac{1}{2} \\
+        P(|1\rangle) &= \frac{1}{2} \\
+    \end{align}
+
+    Then if we apply the \textit{H} again, we will get a similar equal probability distributions for each state we observes.
+\end{enumerate}
 
 
 \end{document}
