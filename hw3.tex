@@ -1,0 +1,241 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\newcommand{\ket}[1]{|#1\rangle}
+
+\begin{flushright}
+    \textbf{Hongtao Zhang \\}
+\end{flushright}
+
+\begin{center}
+    \textbf{CS 880: Quantum Algorithm \\
+        Homework NUM: 3} \\
+\end{center}
+
+\section*{Solution}
+
+\subsection{a}
+
+
+\begin{enumerate}
+    \item \begin{align*}
+              \frac{1}{2} \begin{pmatrix}
+                              1 \\
+                              0 \\
+                              0 \\
+                              1
+                          \end{pmatrix}\begin{pmatrix}
+                                           1 & 0 & 0 & 1
+                                       \end{pmatrix} & =1/2 \begin{pmatrix}
+                                                                1 & 0 & 0 & 1 \\
+                                                                0 & 0 & 0 & 0 \\
+                                                                0 & 0 & 0 & 0 \\
+                                                                1 & 0 & 0 & 1
+                                                            \end{pmatrix} \\
+          \end{align*}
+    \item We know that
+          \begin{align*}
+              \rho  & = \frac{1}{2} \begin{pmatrix}
+                                        1 & 0 & 0 & 1 \\
+                                        0 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0 \\
+                                        1 & 0 & 0 & 1
+                                    \end{pmatrix} \\
+              \rho' & = \sum_{s}^{} P_s \rho P_s   \\
+                    & = \frac{1}{2} \begin{pmatrix}
+                                        1 & 0 & 0 & 0 \\
+                                        0 & 1 & 0 & 0 \\
+                                        0 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0
+                                    \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 1 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  1 & 0 & 0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 0 \\
+                  0 & 1 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0
+              \end{pmatrix}
+              + \frac{1}{2} \begin{pmatrix}
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 1 & 0 \\
+                                0 & 0 & 0 & 1
+                            \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 1 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  1 & 0 & 0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 1 & 0 \\
+                  0 & 0 & 0 & 1
+              \end{pmatrix}                       \\
+                    & = \frac{1}{2} \begin{pmatrix}
+                                        1 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0
+                                    \end{pmatrix}
+              + \frac{1}{2} \begin{pmatrix}
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 0 & 1
+                            \end{pmatrix}         \\
+                    & = \frac{1}{2} \begin{pmatrix}
+                                        1 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 0 \\
+                                        0 & 0 & 0 & 1
+                                    \end{pmatrix}
+          \end{align*}
+
+    \item Base on the preset, we know that there are only two possible state (00) and (11),
+          which means once we have measured the first bit, the second bit is determined, so the final measurement won't change anything.
+
+          \begin{align*}
+              \rho'' & = \sum_{s}^{} P_s \rho' P_s  \\
+                     & = \frac{1}{2}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 1 & 0 \\
+                  0 & 0 & 0 & 0
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 1 & 0 \\
+                  0 & 0 & 0 & 0
+              \end{pmatrix}
+              + \frac{1}{2}
+              \begin{pmatrix}
+                  0 & 0 & 0 & 0 \\
+                  0 & 1 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  0 & 0 & 0 & 0 \\
+                  0 & 1 & 0 & 0 \\
+                  0 & 0 & 0 & 0 \\
+                  0 & 0 & 0 & 1
+              \end{pmatrix}                        \\
+                     & = \frac{1}{2} \begin{pmatrix}
+                                         1 & 0 & 0 & 0 \\
+                                         0 & 0 & 0 & 0 \\
+                                         0 & 0 & 0 & 0 \\
+                                         0 & 0 & 0 & 1
+                                     \end{pmatrix}
+          \end{align*}
+\end{enumerate}
+
+\subsection{2}
+
+\begin{enumerate}
+    \item \begin{align*}
+              \rho & = \frac{1}{2} \begin{pmatrix}
+                                       1 & 1
+                                   \end{pmatrix}\begin{pmatrix}
+                                                    1 \\
+                                                    1
+                                                \end{pmatrix} \\
+                   & = \frac{1}{2} \begin{pmatrix}
+                                       1 & 1 \\
+                                       1 & 1
+                                   \end{pmatrix}              \\
+          \end{align*}
+    \item Because Bob has been measured, because of the information, alice will have the same state as bob, so alice will implicitly be measured.
+          \begin{align*}
+              \rho' & = \sum_{s}^{} P_s \rho P_s \\
+                    & = \frac{1}{2}
+              \begin{pmatrix}
+                  1 & 0 \\
+                  0 & 0
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 1 \\
+                  1 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 0 \\
+                  0 & 0
+              \end{pmatrix}
+          \end{align*} +
+          \begin{align*}
+              \frac{1}{2}
+              \begin{pmatrix}
+                  0 & 0 \\
+                  0 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  1 & 1 \\
+                  1 & 1
+              \end{pmatrix}
+              \begin{pmatrix}
+                  0 & 0 \\
+                  0 & 1
+              \end{pmatrix}                  \\
+               & = \frac{1}{2} \begin{pmatrix}
+                                   1 & 0 \\
+                                   0 & 1
+                               \end{pmatrix}
+          \end{align*}
+    \item After the final measure, alices should preserve the same behavior as (2) because of the situation we see in the entire system from (a)
+
+\end{enumerate}
+
+
+\end{document}
