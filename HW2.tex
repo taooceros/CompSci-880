@@ -33,6 +33,8 @@
 \setlength{\parindent}{0.3in}
 \begin{document}
 
+\newcommand{\ket}[1]{|#1\rangle}
+
 \begin{flushright}
     \textbf{Hongtao Zhang \\}
 \end{flushright}
@@ -56,6 +58,46 @@ Therefore, it has the same effect as measure the 5 qubits as the for $z$ as the 
 It changes because of measurement collapse the distribution into a single state.
 
 Therefore, the potential interference between the two qubits is destroyed, but instead become a linear combination as probability model.
+
+
+
+\begin{align*}
+    |00\rangle &= \begin{pmatrix}
+                     1 \\
+                     0 \\
+                     0 \\
+                     0 \\
+                 \end{pmatrix} \\
+    |01\rangle &= \begin{pmatrix}
+                     0 \\
+                     1 \\
+                     0 \\
+                     0 \\
+                 \end{pmatrix} \\
+    |10\rangle &= \begin{pmatrix}
+                     0 \\
+                     0 \\
+                     1 \\
+                     0 \\
+                 \end{pmatrix} \\
+    |11\rangle &= \begin{pmatrix}
+                     0 \\
+                     0 \\
+                     0 \\
+                     1\\
+                 \end{pmatrix}\\
+    \text{CNOT} &= \begin{pmatrix}
+                1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 \\
+                0 & 0 & 0 & 1 \\
+                0 & 0 & 1 & 0
+            \end{pmatrix}\\
+\end{align*}
+
+
+\begin{equation*}
+    \ket{0} \implies \ket{00}
+\end{equation*}
 
 
 \end{document}
