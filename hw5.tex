@@ -1,0 +1,103 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+
+\newcommand{\kt}[1]{|#1\rangle}
+
+\begin{document}
+
+\section*{HW5}
+
+$$
+H \kt{0} = \frac{1}{\sqrt{2}} \begin{pmatrix} 
+            1\\
+            1 
+        \end{pmatrix}
+$$
+
+$$
+\rho = \frac{1}{2} \begin{pmatrix} 
+    1 & 1\\
+    1 & 1 
+\end{pmatrix} = (1, 0, 0)
+$$
+
+$$
+H \kt{1} = \kt{-}
+$$
+
+$$
+\rho=\frac{1}{2} \begin{pmatrix} 
+    1 & -1\\
+    -1 & 1\\ 
+\end{pmatrix} 
+$$
+
+Therefore it also rotate 90 degree through the $Y$ axis.
+
+Let's check an example at the $Y$ axis.
+
+$$
+\rho=\frac{1}{2}\begin{pmatrix}
+    1 & -i\\
+    i & 1
+\end{pmatrix}
+$$
+
+Apply $H$ to it
+
+$$
+H \rho H^* = \frac{1}{\sqrt{2}}\begin{pmatrix} 
+    1 & 1\\
+    1 & -1 
+\end{pmatrix} \frac{1}{2}\begin{pmatrix}
+    1 & -i\\
+    i & 1
+\end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 
+    1 & 1\\
+    1 & -1 
+\end{pmatrix} 
+= \frac{1}{4}\begin{pmatrix} 
+    2 & 2i\\
+    -2i & 2 
+\end{pmatrix}
+$$
+
+Therefore it doesn't do anything, so the conclusion makes sense.
+
+
+Therefore it rotate 90 degress clockwise through the Y axis to $\kt{0}$.
+
+
+
+\end{document}
