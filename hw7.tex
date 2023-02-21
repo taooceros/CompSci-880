@@ -40,6 +40,20 @@
 
 \subsection*{1}
 
+We can implement the addition part of the dot produce with CNOT gate,
+but for the multiplication part, we might need a CCNOT gate.
+
+There should be no way of simulating CCNOT with plain CNOT,
+so we will need to find some other way of implementing the multiplication.
+
+The major issue with CNOT and not is it is not possible to distinguish between
+state $\kt{00}$ and $\kt{11}$, while we only want to add if it is $\kt{11}$,
+which says it always have two states that will result in positive, and two negative.
+
+For single qubit ($k=1$), it is exactly a CCNOT gate.
+At least we need a CCNOT gate to implement, but it seems like that's not possible.
+
+
 \subsection*{2}
 
 We can just do a matrix multiplication and see the results is correct.
@@ -49,27 +63,21 @@ We can just do a matrix multiplication and see the results is correct.
         1 & 1  & 1  & 1  \\
         1 & -1 & 1  & -1 \\
         1 & 1  & -1 & -1 \\
-        1 & 1  & -1 & -1 \\
         1 & -1 & -1 & 1
     \end{pmatrix}
-
     \begin{pmatrix}
         1 & 0 & 0 & 0 \\
         0 & 1 & 0 & 0 \\
         0 & 0 & 0 & 1 \\
         0 & 0 & 1 & 0
     \end{pmatrix}
-
     \begin{pmatrix}
         1 & 1  & 1  & 1  \\
         1 & -1 & 1  & -1 \\
         1 & 1  & -1 & -1 \\
-        1 & 1  & -1 & -1 \\
         1 & -1 & -1 & 1
     \end{pmatrix}
-
     =
-
     \begin{pmatrix}
         1 & 0 & 0 & 0 \\
         0 & 0 & 0 & 1 \\
@@ -79,5 +87,11 @@ We can just do a matrix multiplication and see the results is correct.
 \]
 
 \subsection*{3}
+
+Whenever we have a single cnot gate between the two Hadamard gate,
+we can just inverse that cnot gate and split out the two Hadamard gate,
+and remove the Hadamard gate corresponding to the cnot circuits.
+
+
 
 \end{document}
