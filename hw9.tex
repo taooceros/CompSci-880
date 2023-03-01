@@ -40,12 +40,43 @@
 
 \subsection*{Problem 1}
 
-The probability of measuring a success with $p$ amplitude is just $p$.
-Therefore, the failure probability within the first $k$ iteration is $(1-p)^k$.
+We know $\sin(\theta_0)^2=p\implies \sin(\theta_0)=\sqrt{p}$
+
+Every iteration we add the angle by $\theta_0^2$, which means the success probability is a sequence
+
+\[
+    \sin(\theta_0)^2, \sin(3\theta_0)^2, \sin(5\theta_0)^2 \cdots
+\]
+
+From wolframalpha, the result
+
+\[
+    (1-\sin(\theta)^2)(1-\sin(3\theta)^2)\cdots(1-\sin((2k-1)\theta)^2
+\]
+
+is
+
+\[
+    4^{-k - 1} e^{-2 i \theta (k + 1)^2} (e^{-2 i \theta})^{2 k} (e^{4 i \theta})^k ((-e^{2 i \theta};e^{4 i \theta})_{k + 1})^2
+\]
+where $\theta=\sin^{-1}(\sqrt{p})$ and $(a;q)_n$ is the Pochhammer symbol.
+
+Approximate the $\sin(\theta)\approx \theta$
+
+we can get
+\[
+(1-p)(1-9p)(1-81p)\cdots (1-(2k-1)^2p)= (4^kp^k \Gamma(\frac{k+1}{2})^2)/\pi
+\]
+
+which grows in $p$.
 
 \subsection*{Problem 2}
 
-The expected number of time until the first success is just $\frac{1}{p}$.
+With a similar approximation, we can get
 
+\[
+    \sum\limits_{n=1}^{\infty} n\left(\prod_{i=1}^{n-1}(1-(2i-1)p)\right)(2n-1)p
+\]
+which should be approximately a geometric grow in order $p$, so the expected number of iterations is approximately $O(1/p)$.
 
 \end{document}
