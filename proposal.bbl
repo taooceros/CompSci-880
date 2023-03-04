@@ -1,0 +1,53 @@
+\begin{thebibliography}{1}
+
+\bibitem{kothari2023mean}
+Robin Kothari and Ryan O'Donnell.
+\newblock Mean estimation when you have the source code; or, quantum monte
+  carlo methods.
+\newblock In {\em Proceedings of the 2023 Annual ACM-SIAM Symposium on Discrete
+  Algorithms (SODA)}, pages 1186--1215. SIAM, 2023.
+
+\bibitem{hamoudi2021quantum}
+Yassine Hamoudi.
+\newblock {\em Quantum algorithms for the Monte Carlo method}.
+\newblock PhD thesis, Universit{\'e} Paris Cit{\'e}, 2021.
+
+\bibitem{montanaro2015quantum}
+Ashley Montanaro.
+\newblock Quantum speedup of monte carlo methods.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
+  Engineering Sciences}, 471(2181):20150301, 2015.
+
+\bibitem{HEINRICH20021}
+S.~Heinrich.
+\newblock Quantum summation with an application to integration.
+\newblock {\em Journal of Complexity}, 18(1):1--50, 2002.
+
+\bibitem{ceperley1986quantum}
+David Ceperley and Berni Alder.
+\newblock Quantum monte carlo.
+\newblock {\em Science}, 231(4738):555--560, 1986.
+
+\bibitem{boulder2003lecture}
+Boulder 2003~Summer School.
+\newblock {\em Computational Quantum Magnetism}.
+\newblock 2003.
+
+\bibitem{troyer2005computational}
+Matthias Troyer and Uwe-Jens Wiese.
+\newblock Computational complexity and fundamental limitations to fermionic
+  quantum monte carlo simulations.
+\newblock {\em Physical review letters}, 94(17):170201, 2005.
+
+\bibitem{huggins2022unbiasing}
+William~J Huggins, Bryan~A O’Gorman, Nicholas~C Rubin, David~R Reichman, Ryan
+  Babbush, and Joonho Lee.
+\newblock Unbiasing fermionic quantum monte carlo with a quantum computer.
+\newblock {\em Nature}, 603(7901):416--420, 2022.
+
+\bibitem{zhang2022quantum}
+Yukun Zhang, Yifei Huang, Jinzhao Sun, Dingshun Lv, and Xiao Yuan.
+\newblock Quantum computing quantum monte carlo.
+\newblock {\em arXiv preprint arXiv:2206.10431}, 2022.
+
+\end{thebibliography}

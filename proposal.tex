@@ -1,0 +1,81 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{cite}
+
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+
+\newcommand{\kt}[1]{|#1\rangle}
+
+
+
+\begin{document}
+
+
+\begin{flushright}
+    \textbf{Hongtao Zhang, Zhilin Du, Boyuan Zou \\}
+\end{flushright}
+
+\begin{center}
+    \textbf{CS 880: Quantum Algorithm} \\
+\end{center}
+
+\section*{Topic}
+
+We plan to do a project relating to Quantum Monte Carlo.
+
+\begin{enumerate}
+    \item Mean Estimation \cite{kothari2023mean, hamoudi2021quantum, montanaro2015quantum, HEINRICH20021}
+    \item Quantum Monte Carlo and Many-body Problem \cite{ceperley1986quantum, boulder2003lecture}
+    \item Complexity of Negative Sign Problem (Quantum Monte Carlo) \cite{troyer2005computational}
+    \item Interaction between Quantum Monte Carlo and Quantum Computing \cite{huggins2022unbiasing, zhang2022quantum}
+\end{enumerate}
+
+\section*{Planned Outline}
+
+We will firstly describe what is the classical Monte Carlo and what is quantum Monte Carlo.
+Then we will describe quantum algorithm for classical Monte Carlo (which is the one published
+in QIP 2023), and describe some quantum algorithm for quantum Monte Carlo.
+
+We plan to follow the structure of lecture note from Yale \cite{boulder2003lecture} to learn and describe how Quantum Monte Carlo works.
+
+We also tentatively plan to introduce the computational Complexity of a significant problem in 
+Quantum Monte Carlo, the Negative Sign Problem, which is NP Hard \cite{troyer2005computational}.
+
+We don't think we can actually tackle all of them, but the plan is to at least talk about 
+the classical Monte Carlo and some introduction toward Quantum Monte Carlo.
+
+\bibliographystyle{unsrt}
+
+\bibliography{}
+
+\end{document}
