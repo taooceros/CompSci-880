@@ -1,0 +1,60 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+
+\newcommand{\kt}[1]{|#1\rangle}
+
+\begin{document}
+
+\section*{hw10}
+
+There's always some way to make a block encoding for any matrix $B$.
+
+Therefore, as long as we can manipulate the quantum circuit to make it 
+the same as the one in the problem, there will be some way to create the block encoding.
+
+The idea is to split the original circuit into two parts,
+and let $U_1$ acts on the $\kt{0}$, and let $U_2$ act on the $\kt{1}$,
+and then we merge them together.
+
+So hypothetically, we have a circuit that looks like this:
+
+We firstly use an $\mathcal{H}$ gate to the ancilla qubits,
+and then we apply the $U_1$ gate with a projection that maps to $\kt{0}^l$,
+and then we apply the $U_2$ gate with a projection that maps to $\kt{1}^l$,
+and then we apply the $\mathcal{H}$ gate to the ancilla qubits again.
+
+These two middle gates should be able to be implemented with $V$.
+
+
+\end{document}
