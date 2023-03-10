@@ -41,6 +41,7 @@
 \begin{document}
 
 
+
 \begin{flushright}
     \textbf{Hongtao Zhang, Zhilin Du, Boyuan Zou \\}
 \end{flushright}
@@ -49,9 +50,9 @@
     \textbf{CS 880: Quantum Algorithm} \\
 \end{center}
 
-\section*{Topic}
+\section*{Quantum Monte Carlo}
 
-We plan to do a project relating to Quantum Monte Carlo.
+\subsection*{Tentative Topics}
 
 \begin{enumerate}
     \item Mean Estimation \cite{kothari2023mean, hamoudi2021quantum, montanaro2015quantum, HEINRICH20021}
@@ -73,6 +74,52 @@ Quantum Monte Carlo, the Negative Sign Problem, which is NP Hard \cite{troyer200
 
 We don't think we can actually tackle all of them, but the plan is to at least talk about 
 the classical Monte Carlo and some introduction toward Quantum Monte Carlo.
+
+\section*{Lower bound of Checking sort}
+
+Checking if an array is sorted cost $O(N)$ for the classical method. 
+We assume using quantum algorithm could reduce the complexity to $O(\sqrt{N})$. 
+For this propose we want to design an algorithm to check if an array is sorted and find its corresponding complexity.
+However, if we use a black box that could distinguish that, then this algorithm should be really similar as the phase kickback.
+\\
+
+Reference:
+\begin{enumerate}
+    \item Lower bound for Quantum sorting \cite{shi2000quantum}
+    \item Quantum complexities of ordered searching, sorting, and element distinctness \cite{hoyer2002quantum}
+\end{enumerate}
+
+
+\section*{Quantum Machine Learning (Reinforcement Learning)}
+
+We propose to present some Reinforcement Learning Theory Improvement 
+based on Quantum Computing.
+
+\subsection*{Tentative Topics}
+
+\begin{enumerate}
+    \item Reinforcement Learning Model \cite{agarwal2019reinforcement, dong2008quantum}.
+    \item Quantum Reinforcement Learning \cite{dong2008quantum, meyer2022survey}.
+    \item Example Maze Problem \cite{mackeprang2020reinforcement}.
+    \item Quantum Deep Reinforcement Learning \cite{jerbi2021quantum}.
+    \item Quantum simulated annealing \cite{jerbi2021quantum}.
+\end{enumerate}
+
+We plan to derive a paper that talks about Reinforcement Learning Model,
+and how do people transform the classical Reinforcement Learning Model into
+Quantum Reinforcement Learning Model, and how much speed benefit might be gained.
+
+There are some tentative topics that we plan to include specifically in the project.
+We plan to at least introduce the classical RL Model, and a few different quantum
+adaptation toward the classical RL Model. Further, there are some algorithms
+that we might be able to include, such as Quantum Simulated Annealing,
+stemming from an old heuristic algorithm Simulated Annealing.
+Further, we have included a paper specifically about Maze Problem,
+which is generally the simplest problem the people discuss when 
+talking about reinforcement learning.
+
+If possible, we really want to talk about Quantum Deep Reinforcement Learning;
+However, that might be too much given the time and our knowledge base.
 
 \bibliographystyle{unsrt}
 

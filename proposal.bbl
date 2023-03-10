@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{kothari2023mean}
 Robin Kothari and Ryan O'Donnell.
@@ -49,5 +49,45 @@ William~J Huggins, Bryan~A O’Gorman, Nicholas~C Rubin, David~R Reichman, Ryan
 Yukun Zhang, Yifei Huang, Jinzhao Sun, Dingshun Lv, and Xiao Yuan.
 \newblock Quantum computing quantum monte carlo.
 \newblock {\em arXiv preprint arXiv:2206.10431}, 2022.
+
+\bibitem{shi2000quantum}
+Yaoyun Shi.
+\newblock Quantum lower bound for sorting.
+\newblock {\em arXiv preprint quant-ph/0009091}, 2000.
+
+\bibitem{hoyer2002quantum}
+Peter H{\o}yer, Jan Neerbek, and Yaoyun Shi.
+\newblock Quantum complexities of ordered searching, sorting, and element
+  distinctness.
+\newblock {\em Algorithmica}, 34(4):429--448, 2002.
+
+\bibitem{agarwal2019reinforcement}
+Alekh Agarwal, Nan Jiang, Sham~M Kakade, and Wen Sun.
+\newblock Reinforcement learning: Theory and algorithms.
+\newblock {\em CS Dept., UW Seattle, Seattle, WA, USA, Tech. Rep}, pages 10--4,
+  2019.
+
+\bibitem{dong2008quantum}
+Daoyi Dong, Chunlin Chen, Hanxiong Li, and Tzyh-Jong Tarn.
+\newblock Quantum reinforcement learning.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part B
+  (Cybernetics)}, 38(5):1207--1220, 2008.
+
+\bibitem{meyer2022survey}
+Nico Meyer, Christian Ufrecht, Maniraman Periyasamy, Daniel~D Scherer, Axel
+  Plinge, and Christopher Mutschler.
+\newblock A survey on quantum reinforcement learning.
+\newblock {\em arXiv preprint arXiv:2211.03464}, 2022.
+
+\bibitem{mackeprang2020reinforcement}
+Jelena Mackeprang, Durga B~Rao Dasari, and J{\"o}rg Wrachtrup.
+\newblock A reinforcement learning approach for quantum state engineering.
+\newblock {\em Quantum Machine Intelligence}, 2:1--14, 2020.
+
+\bibitem{jerbi2021quantum}
+Sofiene Jerbi, Lea~M Trenkwalder, Hendrik~Poulsen Nautrup, Hans~J Briegel, and
+  Vedran Dunjko.
+\newblock Quantum enhancements for deep reinforcement learning in large spaces.
+\newblock {\em PRX Quantum}, 2(1):010328, 2021.
 
 \end{thebibliography}
