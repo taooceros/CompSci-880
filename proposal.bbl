@@ -1,93 +1,26 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
-\bibitem{kothari2023mean}
-Robin Kothari and Ryan O'Donnell.
-\newblock Mean estimation when you have the source code; or, quantum monte
-  carlo methods.
-\newblock In {\em Proceedings of the 2023 Annual ACM-SIAM Symposium on Discrete
-  Algorithms (SODA)}, pages 1186--1215. SIAM, 2023.
+\bibitem{durrett2019probability}
+Rick Durrett.
+\newblock {\em Probability: theory and examples}, volume~49.
+\newblock Cambridge university press, 2019.
 
-\bibitem{hamoudi2021quantum}
-Yassine Hamoudi.
-\newblock {\em Quantum algorithms for the Monte Carlo method}.
-\newblock PhD thesis, Universit{\'e} Paris Cit{\'e}, 2021.
+\bibitem{jeffery2022multidimensional}
+Stacey Jeffery and Sebastian Zur.
+\newblock Multidimensional quantum walks, with application to $ k
+  $-distinctness.
+\newblock {\em arXiv preprint arXiv:2208.13492}, 2022.
 
-\bibitem{montanaro2015quantum}
-Ashley Montanaro.
-\newblock Quantum speedup of monte carlo methods.
-\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
-  Engineering Sciences}, 471(2181):20150301, 2015.
+\bibitem{belovs2013quantum}
+Aleksandrs Belovs.
+\newblock Quantum walks and electric networks.
+\newblock {\em arXiv preprint arXiv:1302.3143}, 2013.
 
-\bibitem{HEINRICH20021}
-S.~Heinrich.
-\newblock Quantum summation with an application to integration.
-\newblock {\em Journal of Complexity}, 18(1):1--50, 2002.
-
-\bibitem{ceperley1986quantum}
-David Ceperley and Berni Alder.
-\newblock Quantum monte carlo.
-\newblock {\em Science}, 231(4738):555--560, 1986.
-
-\bibitem{boulder2003lecture}
-Boulder 2003~Summer School.
-\newblock {\em Computational Quantum Magnetism}.
-\newblock 2003.
-
-\bibitem{troyer2005computational}
-Matthias Troyer and Uwe-Jens Wiese.
-\newblock Computational complexity and fundamental limitations to fermionic
-  quantum monte carlo simulations.
-\newblock {\em Physical review letters}, 94(17):170201, 2005.
-
-\bibitem{huggins2022unbiasing}
-William~J Huggins, Bryan~A O’Gorman, Nicholas~C Rubin, David~R Reichman, Ryan
-  Babbush, and Joonho Lee.
-\newblock Unbiasing fermionic quantum monte carlo with a quantum computer.
-\newblock {\em Nature}, 603(7901):416--420, 2022.
-
-\bibitem{zhang2022quantum}
-Yukun Zhang, Yifei Huang, Jinzhao Sun, Dingshun Lv, and Xiao Yuan.
-\newblock Quantum computing quantum monte carlo.
-\newblock {\em arXiv preprint arXiv:2206.10431}, 2022.
-
-\bibitem{shi2000quantum}
-Yaoyun Shi.
-\newblock Quantum lower bound for sorting.
-\newblock {\em arXiv preprint quant-ph/0009091}, 2000.
-
-\bibitem{hoyer2002quantum}
-Peter H{\o}yer, Jan Neerbek, and Yaoyun Shi.
-\newblock Quantum complexities of ordered searching, sorting, and element
-  distinctness.
-\newblock {\em Algorithmica}, 34(4):429--448, 2002.
-
-\bibitem{agarwal2019reinforcement}
-Alekh Agarwal, Nan Jiang, Sham~M Kakade, and Wen Sun.
-\newblock Reinforcement learning: Theory and algorithms.
-\newblock {\em CS Dept., UW Seattle, Seattle, WA, USA, Tech. Rep}, pages 10--4,
-  2019.
-
-\bibitem{dong2008quantum}
-Daoyi Dong, Chunlin Chen, Hanxiong Li, and Tzyh-Jong Tarn.
-\newblock Quantum reinforcement learning.
-\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part B
-  (Cybernetics)}, 38(5):1207--1220, 2008.
-
-\bibitem{meyer2022survey}
-Nico Meyer, Christian Ufrecht, Maniraman Periyasamy, Daniel~D Scherer, Axel
-  Plinge, and Christopher Mutschler.
-\newblock A survey on quantum reinforcement learning.
-\newblock {\em arXiv preprint arXiv:2211.03464}, 2022.
-
-\bibitem{mackeprang2020reinforcement}
-Jelena Mackeprang, Durga B~Rao Dasari, and J{\"o}rg Wrachtrup.
-\newblock A reinforcement learning approach for quantum state engineering.
-\newblock {\em Quantum Machine Intelligence}, 2:1--14, 2020.
-
-\bibitem{jerbi2021quantum}
-Sofiene Jerbi, Lea~M Trenkwalder, Hendrik~Poulsen Nautrup, Hans~J Briegel, and
-  Vedran Dunjko.
-\newblock Quantum enhancements for deep reinforcement learning in large spaces.
-\newblock {\em PRX Quantum}, 2(1):010328, 2021.
+\bibitem{Childs_2003}
+Andrew~M. Childs, Richard Cleve, Enrico Deotto, Edward Farhi, Sam Gutmann, and
+  Daniel~A. Spielman.
+\newblock Exponential algorithmic speedup by a quantum walk.
+\newblock In {\em Proceedings of the thirty-fifth annual {ACM} symposium on
+  Theory of computing}. {ACM}, jun 2003.
 
 \end{thebibliography}
