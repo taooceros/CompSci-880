@@ -401,8 +401,8 @@ The thing left to check is that the matrix $U$ is unitary.
       -B^* & A^* \\
     \end{pmatrix}                           \\
             & = \begin{pmatrix}
-                  A A^* + B B^* & 0            \\
-                  0             & A A^* + BB^* \\
+                  A A^* + B B^* & AB^* - BA^*            \\
+                  BA^* - AB^*            & A A^* + BB^* \\
                 \end{pmatrix}
   \end{align*}
 
@@ -412,12 +412,14 @@ The thing left to check is that the matrix $U$ is unitary.
   \[
     \begin{aligned}
       (A+Bi)(A+Bi)^* & = (A+Bi)(A^*-B^*i)               \\
-                     & = AA^* - AB^*i +A^* Bi - B^*i Bi \\
-                     & = AA^* + BB^*                    \\
+                     & = AA^* - AB^*i + BA^*i - B^*i Bi \\
+                     & = AA^* + BB^* - AB^*i + BA^*i                   \\
                      & = I
     \end{aligned}
   \]
 
+  Because $I$ doesn't have complex entries, so \(AB^*i+BA^*i=0\), which means $AA^* + BB^*$.
+  Therefore, $U U^*=I$.
   Therefore, $A A^* + B B^* = I$, which means $U$ is unitary.
 \end{proof}
 
@@ -429,13 +431,13 @@ for the complex gates on the first $m$ qubits. (\textbf{Need check})
 
 \section{Question 2}
 
-For Deutsch-Jozsa, we firstly apply Hadamard gate on all qubits,
+For Deutsch-Jozsa, we firstly apply the Hadamard gate on all qubits,
 then apply the oracle,
-and then apply Hadamard gate on the first qubit.
+and then apply the Hadamard gate on the first qubit.
 
 Then we can view the Hadamard gate as the transformation
-to the amplitude transformation, and the oracle as the transformation
-to the phase transformation, and the other Hadamard gate as the transformation
+to the amplitude axis, and the phase kickback as the transformation
+to the Flip and Reflection, and the other Hadamard gate as the transformation
 back to original basis.
 
 \subsection{Balanced Function}
@@ -563,25 +565,35 @@ Therefore, we can follow the same algorithm as in the Deutsch-Jozsa algorithm.
 
 \pagebreak
 
+
+
 \section{Question 4 }
 
-TODO!
+\subsection{}
+
+If two graph are isomorphic, then there must exist some permutation of the vertices
+such that \(G_1=G_2\).
+
+On the other hand, it is impossible for two graphs that is not isomorphic to have
+any permutation of the vertices that is the same. Therefore, \(\sigma(G_1)\perp \sigma(G_2) \iff G_1 \cong G_2\)
+
+\subsection{}
+
+We know that if two graphs are isomorphic, then there must exist some permutation of the vertices,
+so there will exist some destructive interference between the two resulting distribution.
+
+\subsection{}
+
+There exist a way to perform permutation on graph classical doesn't imply that it is possible
+to perform superposition of permutation on graph to achieve superposition quantumly in polynomial time.
+
+
 
 \pagebreak
 
 \section{Question 5}
 
-There are two idea about how to solve this problem in $n\sqrt{N}$.
-
-One from the domain and one from the range.
-
-Note that $n=\log N$, so this follows divide and conquer paradigm.
-
-\subsection{Domain}
-
-We can use the domain idea to solve this problem.
-
-\subsection{Range}
+\subsection*{First Attempt}
 
 The idea is very simple and like a binary search, each time we chunk half of the range,
 and see whether we can find the element in the chunk.
@@ -593,5 +605,58 @@ We will need to do this $n$ time.
 Each time Grover search will take $O(\sqrt{N})$ time,
 so the final query complexity is $O(n \sqrt{N})$.
 
+However, there will be an issue with the error, where the error will be amplified,
+because each time we apply Grover, there will be some error. Therefore, we actually
+need to bound the error of every single Grover search to be \(\frac{1}{2n}\), which
+might require additional logarithmic factor of \(n\).
+
+\subsection*{Second Attempt}
+
+Notice that we didn't actually exploit the fact of the Grover search,
+which it might give a uniformly sample from the set of solutions.
+
+Based on Markov inequality, with probability \(\frac{1}{2}\), we will be in the bound
+\(2\mathbb{E} [X]\), therefore, as long as we can have the expected runtime be within
+the required bound, with high probability, we will not exceed some constant times the bound.
+
+Therefore, we will only consider expected bound in the following analysis.
+
+The idea is an improvement of the previous algorithm, where we will use the fact that
+Grover search will give a uniformly sample from the set of solutions.
+
+On the first round, we will do a uniform sampling of the possible from \([0, N]\) to get a point \(x_1\).
+Apply \(f\) to the sampled value, and set the bound to be the value of \(f(x)\).
+(it is equivalent to do a Grover search that uses the oracle that map everything to \(1\)).
+
+On the second round, we will do a Grover Search with the oracle \(U_f\) that only
+map the value that is within the \([0, f(x_1)]\)to \(1\), and the rest to \(0\).
+If we find the result equal to \(x_1\), then we succeed (try a few times)
+otherwise, we will repeat the process.
+
+We will repeat this process until we find a close enough solution.
+
+For every single run, we expect to remove half of the range, so the expected number of run is \(n\).
+Each run we will need \(\sqrt{\frac{N}{t}}\), where t is the size of the range.
+
+Therefore, on average, we can expect the number of query be the following
+\[
+  \begin{split}
+    1 + \sqrt{\frac{N}{\frac{1}{2}N}} + \sqrt{\frac{N}{\frac{1}{4}}N} + \cdots \\
+    \approx 1 + \sqrt{2} + \sqrt{4} + \cdots \\
+  \end{split}
+\]
+which is a geometric series, which will converge some constant factor with \(\sqrt{N}\).
+
+We still might need to take care of the accumulated error, which might contribute to a logarithmic factor.
+
+However, we can smartly avoid this error by checking whether the sample from Grover
+search is within the range that is actually makes sense. If it is not, then we perform
+a Grover search again, which by expectation, we might need on average two trials, which is a constant factor.
+
+The probability of getting \(x_1 = x_*\) is low, which is \(\frac{1}{t}\), where t is the size of the range.
+
+Then, if we just try some constant times, we can have high probability to make sure that we won't stop too early.
+
+The error at the end might not be removed, but it will be bounded by \(\frac{1}{2}\) which is in the allowed range.
 
 \end{document}

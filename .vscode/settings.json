@@ -1,0 +1,58 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "tabout.charactersToTabOutFrom": [
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "(",
+            "close": ")"
+        },
+        {
+            "open": "'",
+            "close": "'"
+        },
+        {
+            "open": "\"",
+            "close": "\""
+        },
+        {
+            "open": ":",
+            "close": ":"
+        },
+        {
+            "open": "=",
+            "close": "="
+        },
+        {
+            "open": ">",
+            "close": ">"
+        },
+        {
+            "open": "<",
+            "close": "<"
+        },
+        {
+            "open": ".",
+            "close": "."
+        },
+        {
+            "open": "`",
+            "close": "`"
+        },
+        {
+            "open": ";",
+            "close": ";"
+        },
+        {
+            "open": "\\(",
+            "close": "\\)"
+        }
+    ]
+}

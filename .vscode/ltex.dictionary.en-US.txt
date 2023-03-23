@@ -1,0 +1,4 @@
+Hadamard
+qubits
+Deutsch-Jozsa
+qubit
