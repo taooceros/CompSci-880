@@ -1,0 +1,1 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qfrom one distribution to the other, then apply Hadamard to both distribution again, then do a measurement on the first distribution.\\E$"}

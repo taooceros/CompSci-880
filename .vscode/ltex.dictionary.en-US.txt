@@ -2,3 +2,4 @@ Hadamard
 qubits
 Deutsch-Jozsa
 qubit
+CNOT

@@ -423,9 +423,9 @@ The thing left to check is that the matrix $U$ is unitary.
   Therefore, $A A^* + B B^* = I$, which means $U$ is unitary.
 \end{proof}
 
-Finally, if we do a measurement on the first m qubits when the
-ancillary qubits are in state $\ket{0}$, we will get the same result
-for the complex gates on the first $m$ qubits. (\textbf{Need check})
+Finally, if we do a measurement on the first m qubits, we will get the same result
+for the complex gates on the first $m$ qubits, because the amplitude of the
+real and complex entries will be superposed given the last qubit is not measured.
 
 \pagebreak
 
@@ -436,9 +436,12 @@ then apply the oracle,
 and then apply the Hadamard gate on the first qubit.
 
 Then we can view the Hadamard gate as the transformation
-to the amplitude axis, and the phase kickback as the transformation
-to the Flip and Reflection, and the other Hadamard gate as the transformation
+to the amplitude axis, and the phase kickback as the
+the Oracle and Reflection in Grover, and the other Hadamard gate as the transformation
 back to original basis.
+
+The overall goal is similar, to transform the final state to a particular state that is either good (Grover),
+or to a state that we can distinguish from (Deutsch-Jozsa).
 
 \subsection{Balanced Function}
 
@@ -582,9 +585,23 @@ any permutation of the vertices that is the same. Therefore, \(\sigma(G_1)\perp 
 We know that if two graphs are isomorphic, then there must exist some permutation of the vertices,
 so there will exist some destructive interference between the two resulting distribution.
 
+However, I am not really sure how to approach the destructive interference.
+There are a few guesses below.
+
+We know that when we are applying Hadamard twice to state \(\ket{0}\),
+we will get \(\ket{0}\) with probability 1 because of the destructive
+interference during the second Hadamard.
+
+Then I guess if we apply Hadamard to both distribution, then do a complete \textbf{CNOT} from
+one distribution to the other, then apply Hadamard to both distribution again,
+then do a measurement on the first distribution. I guess it will result in a \(\ket{0^m}\) with probability 1.
+
+If the two distribution are orthogonal, I claim that the resulting distribution will
+only have very small probability of \(\ket{0^m}\).
+
 \subsection{}
 
-There exist a way to perform permutation on graph classical doesn't imply that it is possible
+There exists a way to perform permutation on graph classical doesn't imply that it is possible
 to perform superposition of permutation on graph to achieve superposition quantumly in polynomial time.
 
 
@@ -655,7 +672,8 @@ a Grover search again, which by expectation, we might need on average two trials
 
 The probability of getting \(x_1 = x_*\) is low, which is \(\frac{1}{t}\), where t is the size of the range.
 
-Then, if we just try some constant times, we can have high probability to make sure that we won't stop too early.
+Then, if we just try some constant times, we can have high probability to make sure that we stop early only in
+some small probability.
 
 The error at the end might not be removed, but it will be bounded by \(\frac{1}{2}\) which is in the allowed range.
 
